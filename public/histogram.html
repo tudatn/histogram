@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histogram Generator</title>
+    <link rel="stylesheet" href="histogram.css" type="text/css">
+    <script src="calculate.js"></script>
+</head>
+
+<body onload="update()">
+    <h1>Histogram Generator</h1>
+        <div class="LowerBound">
+            <h2>Lower bounds</h2>
+            <form class="Grade">
+                <div>
+                    <label for="Max" class="title">Max</label>
+                    <input type="text" name="Max" id="bMax" value="100.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="A+" class="title">A+</label>
+                    <input type="text" name="A+" id="bA+" value="95.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="A" class="title">A</label>
+                    <input type="text" name="A" id="bA" value="90.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="A-" class="title">A-</label>
+                    <input type="text" name="A-" id="bA-" value="85.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="B+" class="title">B+</label>
+                    <input type="text" name="B+" id="bB+" value="80.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="B" class="title">B</label>
+                    <input type="text" name="B" id="bB" value="75.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="B-" class="title">B-</label>
+                    <input type="text" name="B-" id="bB-" value="70.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="C+" class="title">C+</label>
+                    <input type="text" name="C+" id="bC+" value="65.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="C" class="title">C</label>
+                    <input type="text" name="C" id="bC" value="60.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="C-" class="title">C-</label>
+                    <input type="text" name="C-" id="bC-" value="55.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="D" class="title">D</label>
+                    <input type="text" name="D" id="bD" value="50.00" onkeyup="update()">
+                </div>
+                <div>
+                    <label for="F" class="title">F</label>
+                    <input type="text" name="F" id="bF" value="0.00" onkeyup="update()">
+                </div>
+            </form>
+        </div>
+        <div class="Histogram">
+            <h2>Histogram</h2>
+            <table>
+                <tr>
+                    <td>A+</td>
+                    <td class="column2"><div class="graph" id="A+"></div></td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td class="column2"><div class="graph" id="A"></div></td>
+                </tr>
+                <tr>
+                    <td>A-</td>
+                    <td class="column2"><div class="graph" id="A-"></div></td>
+                </tr>
+                <tr>
+                    <td>B+</td>
+                    <td class="column2"><div class="graph" id="B+"></div></td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td class="column2"><div class="graph" id="B"></div></td>
+                </tr>
+                <tr>
+                    <td>B-</td>
+                    <td class="column2"><div class="graph" id="B-"></div></td>
+                </tr>
+                <tr>
+                    <td>C+</td>
+                    <td class="column2"><div class="graph" id="C+"></div></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td class="column2"><div class="graph" id="C"></div></td>
+                </tr>
+                <tr>
+                    <td>C-</td>
+                    <td class="column2"><div class="graph" id="C-"></div></td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td class="column2"><div class="graph" id="D"></div></td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td class="column2"><div class="graph" id="F"></div></td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>
