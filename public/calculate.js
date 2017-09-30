@@ -96,9 +96,10 @@ function recalculateHistogram() {
 }
 
 function drawHistogram(obj, length, scale) {
-    var width = (length/grades.length)*100*scale;
-    obj.style.width = width + '%';
+    var width = (length/grades.length)*100;
+    obj.style.width = width*scale + '%';
     obj.style.visibility = 'visible';
+    obj.textContent = "(" + width + "%)";
 }
 
 function update() {

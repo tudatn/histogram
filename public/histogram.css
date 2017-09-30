@@ -51,7 +51,10 @@ td {
     width: 150px;
     padding-left: 50px;
 }
+
 .graph {
+    padding: 0px;
+    color: white;
     background: blue;
     visibility: hidden;
 }
