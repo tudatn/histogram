@@ -1,5 +1,10 @@
-h2 {
-    color: red;
+h1 {
+    font-family: Arial;
+    font-weight: lighter;
+}
+
+h3 {
+    color: crimson;
     padding-left: 20px;
 }
 
@@ -8,7 +13,7 @@ h2 {
     margin: 10px;
     border-radius: 5px;
     width: 400px;
-    background-color: rgb(230, 242, 255);
+    background-color: rgb(232, 240, 242);
 }
 
 .Histogram {
@@ -29,6 +34,7 @@ div {
 
 input {
     width: 80px;
+    font-family: 'Merriweather', serif;
     text-align: right;
     border-radius: 0px;
     padding: 10px;
@@ -46,6 +52,6 @@ td {
     padding-left: 50px;
 }
 .graph {
-    background: lightblue;
+    background: blue;
     visibility: hidden;
 }

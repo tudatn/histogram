@@ -3,66 +3,67 @@
 <head>
     <title>Histogram Generator</title>
     <link rel="stylesheet" href="histogram.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
     <script src="calculate.js"></script>
 </head>
 
 <body onload="update()">
     <h1>Histogram Generator</h1>
         <div class="LowerBound">
-            <h2>Lower bounds</h2>
+            <h3>Lower bounds</h3>
             <form class="Grade">
                 <div>
                     <label for="Max" class="title">Max</label>
-                    <input type="text" name="Max" id="bMax" value="100.00" onkeyup="update()">
+                    <input type="text" name="Max" id="bMax" value="100.00" onchange="update()">
                 </div>
                 <div>
                     <label for="A+" class="title">A+</label>
-                    <input type="text" name="A+" id="bA+" value="95.00" onkeyup="update()">
+                    <input type="text" name="A+" id="bA+" value="95.00" onchange="update()">
                 </div>
                 <div>
                     <label for="A" class="title">A</label>
-                    <input type="text" name="A" id="bA" value="90.00" onkeyup="update()">
+                    <input type="text" name="A" id="bA" value="90.00" onchange="update()">
                 </div>
                 <div>
                     <label for="A-" class="title">A-</label>
-                    <input type="text" name="A-" id="bA-" value="85.00" onkeyup="update()">
+                    <input type="text" name="A-" id="bA-" value="85.00" onchange="update()">
                 </div>
                 <div>
                     <label for="B+" class="title">B+</label>
-                    <input type="text" name="B+" id="bB+" value="80.00" onkeyup="update()">
+                    <input type="text" name="B+" id="bB+" value="80.00" onchange="update()">
                 </div>
                 <div>
                     <label for="B" class="title">B</label>
-                    <input type="text" name="B" id="bB" value="75.00" onkeyup="update()">
+                    <input type="text" name="B" id="bB" value="75.00" onchange="update()">
                 </div>
                 <div>
                     <label for="B-" class="title">B-</label>
-                    <input type="text" name="B-" id="bB-" value="70.00" onkeyup="update()">
+                    <input type="text" name="B-" id="bB-" value="70.00" onchange="update()">
                 </div>
                 <div>
                     <label for="C+" class="title">C+</label>
-                    <input type="text" name="C+" id="bC+" value="65.00" onkeyup="update()">
+                    <input type="text" name="C+" id="bC+" value="65.00" onchange="update()">
                 </div>
                 <div>
                     <label for="C" class="title">C</label>
-                    <input type="text" name="C" id="bC" value="60.00" onkeyup="update()">
+                    <input type="text" name="C" id="bC" value="60.00" onchange="update()">
                 </div>
                 <div>
                     <label for="C-" class="title">C-</label>
-                    <input type="text" name="C-" id="bC-" value="55.00" onkeyup="update()">
+                    <input type="text" name="C-" id="bC-" value="55.00" onchange="update()">
                 </div>
                 <div>
                     <label for="D" class="title">D</label>
-                    <input type="text" name="D" id="bD" value="50.00" onkeyup="update()">
+                    <input type="text" name="D" id="bD" value="50.00" onchange="update()">
                 </div>
                 <div>
                     <label for="F" class="title">F</label>
-                    <input type="text" name="F" id="bF" value="0.00" onkeyup="update()">
+                    <input type="text" name="F" id="bF" value="0.00" onchange="update()">
                 </div>
             </form>
         </div>
         <div class="Histogram">
-            <h2>Histogram</h2>
+            <h3>Histogram</h3>
             <table>
                 <tr>
                     <td>A+</td>
