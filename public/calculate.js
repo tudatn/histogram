@@ -104,7 +104,10 @@ function drawHistogram(obj, length, scale) {
 function update() {
     var histogram = recalculateHistogram();
     max = Math.max.apply(null, histogram);
-    scale = grades.length / max;
+    if (max != 0)
+        scale = grades.length / max;
+    else
+        scale = 0;
     drawHistogram(document.getElementById('A+'), histogram[0], scale);
     drawHistogram(document.getElementById('A'), histogram[1], scale);
     drawHistogram(document.getElementById('A-'), histogram[2], scale);
