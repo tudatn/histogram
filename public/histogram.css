@@ -12,12 +12,12 @@ h3 {
     float: left;
     margin: 10px;
     border-radius: 5px;
-    width: 400px;
+    width: 450px;
     background-color: rgb(232, 240, 242);
 }
 
 .Histogram {
-    width: 300px;
+    width: 350px;
 }
 
 .title {
@@ -26,6 +26,7 @@ h3 {
     text-align: left;
     padding-left: 50px;
     padding-right: : 50px;
+    padding-top: 10px;
 }
 
 div {
@@ -37,8 +38,8 @@ input {
     font-family: 'Merriweather', serif;
     text-align: right;
     border-radius: 0px;
-    padding: 10px;
-    border-style: none;
+    padding: 8px;
+    border-style: solid;
 }
 
 td {
@@ -48,12 +49,12 @@ td {
 }
 
 .column2 {
-    width: 150px;
+    width: 200px;
     padding-left: 50px;
 }
 
 .graph {
-    padding: 0px;
+    padding: 2px;
     color: white;
     background: blue;
     visibility: hidden;
