@@ -1,0 +1,27 @@
+<div class="students index">
+  <h2>Students</h2>
+
+  <%= link_to("Add New Student", new_student_path, :class => 'action new') %>
+
+  <table class="listing" summary="Student list">
+    <tr class="header">
+      <th>#</th>
+      <th>StudentID</th>
+      <th>Full Name</th>
+      <th>Email</th>
+    </tr>
+
+    <% @students.each do |student| %>
+    <tr>
+      <td><%= student.student_id %></td>
+      <td><%= student.name %></td>
+      <td><%= student.email %></td>
+      <td class="actions">
+        <%= link_to("View", student_path(student), :class => 'action show') %>
+        <%= link_to("Edit", edit_student_path(student), :class => 'action edit') %>
+        <%= link_to("Delete", delete_student_path(student), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
