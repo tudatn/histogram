@@ -1,0 +1,14 @@
+
+<%= link_to("<< Back to List", courses_path, :class => 'back-link') %>
+
+<div class="courses delete">
+  <h2>Update Course</h2>
+
+  <%= form_for(@course, :method => 'delete') do |f| %>
+    <p>Are you sure to delete this course?</p>
+    <p class="reference-name"><%= f.object.description %></p>
+    <div class="form-buttons">
+      <%= f.submit("Delete Course") %>
+    </div>
+  <% end %>
+</div>

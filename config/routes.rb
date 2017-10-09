@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :courses do
+    member do
+      get :delete
+    end
+  end
+
   resources :widgets
 
   # match ':controller(/:action(/:id))', :via => :get
