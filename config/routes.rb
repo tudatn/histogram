@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :enrolls do
+    member do
+      get :delete
+    end
+  end
+
   resources :students do
     member do
       get :delete

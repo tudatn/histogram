@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20171009162512) do
     t.datetime "updated_at"
   end
 
-  add_index "enrolls", ["student_id", "course_id"], name: "index_enrolls_on_student_id_and_course_id", using: :btree
+  add_index "enrolls", ["student_id", "course_id"], name: "index_enrolls_on_student_id_and_course_id", unique: true, using: :btree
 
   create_table "students", primary_key: "student_id", force: :cascade do |t|
     t.string   "name",       limit: 50,              null: false

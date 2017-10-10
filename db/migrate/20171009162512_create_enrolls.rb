@@ -7,7 +7,7 @@ class CreateEnrolls < ActiveRecord::Migration
       t.string :lettergrade
       t.timestamps
     end
-    add_index(:enrolls, [:student_id, :course_id])
+    add_index:enrolls, [:student_id, :course_id], unique: true
   end
 
   def down

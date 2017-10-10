@@ -1,0 +1,29 @@
+<div class="enrolls index">
+  <h2>Enrollments</h2>
+
+  <%= link_to("Add New Enrollment", new_enroll_path, :class => 'action new') %>
+
+  <table class="listing" summary="Enrollment list">
+    <tr class="header">
+      <th>#</th>
+      <th>StudentID</th>
+      <th>CourseID</th>
+      <th>Percentage</th>
+      <th>Grade</th>
+    </tr>
+
+    <% @enrolls.each do |enroll| %>
+    <tr>
+      <td><%= enroll.student_id %></td>
+      <td><%= enroll.course_id %></td>
+      <td><%= enroll.percentage %></td>
+      <td><%= enroll.lettergrade %></td>
+      <td class="actions">
+        <%= link_to("View", enroll_path(enroll), :class => 'action show') %>
+        <%= link_to("Edit", edit_enroll_path(enroll), :class => 'action edit') %>
+        <%= link_to("Delete", delete_enroll_path(enroll), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

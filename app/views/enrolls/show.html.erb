@@ -1,0 +1,25 @@
+<%= link_to("<< Back to List", enrolls_path, :class => 'back-link') %>
+
+<div class="enroll show">
+  <h2>Show Enrollment</h2>
+
+  <table summary="Enrollment detail view">
+    <tr>
+      <th>Student ID</th>
+      <td><%= @enroll.student_id %></td>
+    </tr>
+    <tr>
+      <th>Course ID</th>
+      <td><%= @enroll.course_id %></td>
+    </tr>
+    <tr>
+      <th>Percentage</th>
+      <td><%= @enroll.percentage %></td>
+    </tr>
+    <tr>
+      <th>Grade</th>
+      <td><%= @enroll.lettergrade %></td>
+    </tr>
+  </table>
+
+</div>

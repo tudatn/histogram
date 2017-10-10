@@ -1,0 +1,13 @@
+
+<%= link_to("<< Back to List", enrolls_path, :class => 'back-link') %>
+
+<div class="enrolls delete">
+  <h2>Delete Enrollment</h2>
+
+  <%= form_for(@enroll, :method => 'delete') do |f| %>
+    <p>Are you sure to delete this enrollment?</p>
+    <div class="form-buttons">
+      <%= f.submit("Delete Enrollment") %>
+    </div>
+  <% end %>
+</div>
