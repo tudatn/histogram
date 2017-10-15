@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  layout 'general'
+
   def index
     @students = Student.all
     # render('index') : default
@@ -16,6 +19,7 @@ class StudentsController < ApplicationController
     # Create a new student
     @student = Student.new(student_params)
     if @student.save
+      flash[:notice] = "Created succesfully"
       redirect_to(students_path)
     else
       render('new')
@@ -31,6 +35,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     # Update data
     if @student.update_attributes(student_params)
+      flash[:notice] = "Updated succesfully"
       redirect_to(student_path(@student))
     else
       redirect_to('edit')
@@ -44,6 +49,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
+    flash[:notice] = "Deleted succesfully"
     redirect_to(students_path)
   end
 

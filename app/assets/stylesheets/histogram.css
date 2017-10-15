@@ -1,0 +1,61 @@
+h1 {
+    font-family: Arial;
+    font-weight: lighter;
+}
+
+h3 {
+    color: crimson;
+    padding-left: 20px;
+}
+
+.LowerBound, .Histogram {
+    float: left;
+    margin: 10px;
+    border-radius: 5px;
+    width: 450px;
+    background-color: rgb(232, 240, 242);
+}
+
+.Histogram {
+    width: 350px;
+}
+
+.title {
+    float: left;
+    width: 150px;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: : 50px;
+    padding-top: 10px;
+}
+
+div {
+    padding-bottom: 20px;
+}
+
+input {
+    width: 80px;
+    font-family: 'Merriweather', serif;
+    text-align: right;
+    border-radius: 0px;
+    padding: 8px;
+    border-style: solid;
+}
+
+td {
+    width: 50;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+
+.column2 {
+    width: 200px;
+    padding-left: 50px;
+}
+
+.graph {
+    padding: 2px;
+    color: white;
+    background: blue;
+    visibility: hidden;
+}

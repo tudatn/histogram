@@ -5,7 +5,6 @@
 
   <table class="listing" summary="Enrollment list">
     <tr class="header">
-      <th>#</th>
       <th>StudentID</th>
       <th>CourseID</th>
       <th>Percentage</th>
@@ -16,7 +15,7 @@
     <tr>
       <td><%= enroll.student_id %></td>
       <td><%= enroll.course_id %></td>
-      <td><%= enroll.percentage %></td>
+      <td><%= number_with_precision(enroll.percentage, precision: 2) %></td>
       <td><%= enroll.lettergrade %></td>
       <td class="actions">
         <%= link_to("View", enroll_path(enroll), :class => 'action show') %>

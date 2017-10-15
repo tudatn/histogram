@@ -5,14 +5,13 @@
 
   <table class="listing" summary="Course list">
     <tr class="header">
-      <th>#</th>
       <th>CourseID</th>
       <th>Description</th>
     </tr>
 
     <% @courses.each do |course| %>
     <tr>
-      <td><%= course.course_id %></td>
+      <td><%= link_to(course.course_id, course_path(course)) %></td>
       <td><%= course.description %></td>
       <td class="actions">
         <%= link_to("View", course_path(course), :class => 'action show') %>

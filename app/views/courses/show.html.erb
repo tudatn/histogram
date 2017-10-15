@@ -4,14 +4,20 @@
   <h2>Show Course</h2>
 
   <table summary="Student detail view">
-    <tr>
-      <th>Course ID</th>
-      <td><%= @course.course_id %></td>
-    </tr>
-    <tr>
-      <th>Course description</th>
-      <td><%= @course.description %></td>
-    </tr>
+      <tr>
+        <th>Student ID</th>
+        <th>Course ID</th>
+        <th>Percentage</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+      <% @course.enrolls.each do |enroll| %>
+        <td><%= link_to(enroll.student_id, student_path(enroll.student_id)) %></td>
+        <td><%= enroll.course_id %></td>
+        <td><%= number_with_precision(enroll.percentage, precision: 2) %></td>
+        <td><%= enroll.lettergrade %></td>
+      </tr>
+      <% end %>
   </table>
-
+  <%= link_to("Assign Grade", :action => "histogram", :id => @course.course_id) %>
 </div>

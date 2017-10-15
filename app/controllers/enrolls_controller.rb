@@ -1,4 +1,7 @@
 class EnrollsController < ApplicationController
+
+  layout 'general'
+
   def index
     @enrolls = Enroll.all
     # render('index') : default
@@ -16,6 +19,7 @@ class EnrollsController < ApplicationController
     # Create a new enroll
     @enroll = Enroll.new(enroll_params)
     if @enroll.save
+      flash[:notice] = "Created succesfully"
       redirect_to(enrolls_path)
     else
       render('new')
@@ -31,6 +35,7 @@ class EnrollsController < ApplicationController
     @enroll = Enroll.find(params[:id])
     # Update data
     if @enroll.update_attributes(enroll_params)
+      flash[:notice] = "Updated succesfully"
       redirect_to(enroll_path(@enroll))
     else
       redirect_to('edit')
@@ -44,6 +49,7 @@ class EnrollsController < ApplicationController
   def destroy
     @enroll = Enroll.find(params[:id])
     @enroll.destroy
+    flash[:notice] = "Deleted succesfully"
     redirect_to(enrolls_path)
   end
 

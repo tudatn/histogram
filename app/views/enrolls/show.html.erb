@@ -4,6 +4,7 @@
   <h2>Show Enrollment</h2>
 
   <table summary="Enrollment detail view">
+    <% @enrolls.each do |enroll| %>
     <tr>
       <th>Student ID</th>
       <td><%= @enroll.student_id %></td>
@@ -14,12 +15,13 @@
     </tr>
     <tr>
       <th>Percentage</th>
-      <td><%= @enroll.percentage %></td>
+      <td><%= number_with_precision(@enroll.percentage, precision: 2) %></td>
     </tr>
     <tr>
       <th>Grade</th>
       <td><%= @enroll.lettergrade %></td>
     </tr>
+    <% end %>
   </table>
 
 </div>
