@@ -7,10 +7,11 @@
     <!-- <link rel="stylesheet" href="public/histogram.css" type="text/css"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
     <!-- <script src="calculate.js"></script> -->
+    <%= javascript_include_tag('histogram') %>
+    <%= stylesheet_link_tag "histogram" %>
 </head>
 
-<%= javascript_include_tag('histogram') %>
-<%= stylesheet_link_tag "histogram" %>
+
 
 <body onload="update()">
     <h1>Histogram Generator</h1>
