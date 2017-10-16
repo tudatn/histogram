@@ -22,6 +22,7 @@ class EnrollsController < ApplicationController
       flash[:notice] = "Created succesfully"
       redirect_to(enrolls_path)
     else
+      flash[:notice] = "Something wrong"
       render('new')
     end
   end

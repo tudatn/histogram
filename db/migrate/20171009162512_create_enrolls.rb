@@ -2,7 +2,7 @@ class CreateEnrolls < ActiveRecord::Migration
   def up
     create_table :enrolls do |t|
       t.integer :student_id
-      t.integer :course_id
+      t.string :course_id
       t.float :percentage, null: false
       t.string :lettergrade
       t.timestamps

@@ -1,14 +1,14 @@
 // var grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34, 60.00, 81.43, 86.22, 88.33, 9.03, 49.93, 52.34, 53.11, 50.10, 88.88, 55.32, 55.69, 61.68, 70.44, 70.54, 90.0, 71.11, 80.01];
-var grades = [];
+  var grades = [];
 
-var enrolls = gon.enrolls;
+  var enrolls = gon.enrolls;
 
-for (var i = 0; i < enrolls.length; i++) {
-  grades.push(enrolls[i].percentage);
-}
+  for (var i = 0; i < enrolls.length; i++) {
+    grades.push(enrolls[i].percentage);
+  }
 
-// get all bound objects
-function getCurrentBound() {
+  // get all bound objects
+  function getCurrentBound() {
     var currentBound = [];
     currentBound[0] = document.getElementById('bMax');
     currentBound[1] = document.getElementById('bA+');
@@ -23,104 +23,104 @@ function getCurrentBound() {
     currentBound[10] = document.getElementById('bD');
     currentBound[11] = document.getElementById('bF');
     return currentBound;
-}
+  }
 
-// check all bound values are valid or not
-// raise alert if there is invalid value
-function isValidBoundValue(currentBound) {
+  // check all bound values are valid or not
+  // raise alert if there is invalid value
+  function isValidBoundValue(currentBound) {
     var isValid = true;
     for (var i = 0; i < 12; i++) {
-        if (isNaN(currentBound[i].value)) {
-            currentBound[i].focus();
-            currentBound[i].style.backgroundColor = 'red';
-            isValid = false;
-        }
-        else {
-            currentBound[i].style.backgroundColor = 'white';
-            currentBound[i].value = parseFloat(currentBound[i].value).toFixed(2);
-        }
+      if (isNaN(currentBound[i].value)) {
+        currentBound[i].focus();
+        currentBound[i].style.backgroundColor = 'red';
+        isValid = false;
+      }
+      else {
+        currentBound[i].style.backgroundColor = 'white';
+        currentBound[i].value = parseFloat(currentBound[i].value).toFixed(2);
+      }
     }
     if (isValid == false) {
-        alert("Bounds must be a valid number!");
+      alert("Bounds must be a valid number!");
     }
     return isValid;
-}
+  }
 
-// pre-condition: all bound values are valid
-// post-condition: return array of all bound values (float)
-function getBoundValue(currentBound) {
+  // pre-condition: all bound values are valid
+  // post-condition: return array of all bound values (float)
+  function getBoundValue(currentBound) {
     var boundValue = [];
     for (var i = 0; i < 12; i++) {
-        boundValue[i] = parseFloat(currentBound[i].value);
+      boundValue[i] = parseFloat(currentBound[i].value);
     }
     return boundValue;
-}
+  }
 
-// pre-condition: all bound values are valid
-function isValidBoundRange(currentBound, currentBoundValue) {
+  // pre-condition: all bound values are valid
+  function isValidBoundRange(currentBound, currentBoundValue) {
     var isValid = true;
     max = currentBoundValue[0];
     if (currentBoundValue[1] > max || currentBoundValue[1] <= currentBoundValue[2]) {
-        currentBound[1].focus();
-        currentBound[1].style.backgroundColor = 'red';
-        isValid = false;
+      currentBound[1].focus();
+      currentBound[1].style.backgroundColor = 'red';
+      isValid = false;
     }
     for (var i = 2; i < 11; i++) {
-        if (currentBoundValue[i] <= currentBoundValue[i+1] || currentBoundValue[i] >= currentBoundValue[i-1]) {
-            currentBound[i].focus();
-            currentBound[i].style.backgroundColor = 'red';
-            isValid = false;
-        }
+      if (currentBoundValue[i] <= currentBoundValue[i+1] || currentBoundValue[i] >= currentBoundValue[i-1]) {
+        currentBound[i].focus();
+        currentBound[i].style.backgroundColor = 'red';
+        isValid = false;
+      }
     }
     if (isValid == false) {
-        alert("Bounds range is overlapped!");
+      alert("Bounds range is overlapped!");
     }
     return isValid;
-}
+  }
 
-function recalculateHistogram() {
+  function recalculateHistogram() {
     var currentBound = getCurrentBound();
     var histogram = [0,0,0,0,0,0,0,0,0,0,0];
     if (isValidBoundValue(currentBound)) {
-        var boundValue = getBoundValue(currentBound);
-        if (isValidBoundRange(currentBound, boundValue)) {
-            for (var i = 0; i < grades.length; i++) {
-                if (grades[i] >= boundValue[1]) histogram[0]++;
-                else if (grades[i] >= boundValue[2]) histogram[1]++;
-                else if (grades[i] >= boundValue[3]) histogram[2]++;
-                else if (grades[i] >= boundValue[4]) histogram[3]++;
-                else if (grades[i] >= boundValue[5]) histogram[4]++;
-                else if (grades[i] >= boundValue[6]) histogram[5]++;
-                else if (grades[i] >= boundValue[7]) histogram[6]++;
-                else if (grades[i] >= boundValue[8]) histogram[7]++;
-                else if (grades[i] >= boundValue[9]) histogram[8]++;
-                else if (grades[i] >= boundValue[10]) histogram[9]++;
-                else histogram[10]++;
-            }
+      var boundValue = getBoundValue(currentBound);
+      if (isValidBoundRange(currentBound, boundValue)) {
+        for (var i = 0; i < grades.length; i++) {
+          if (grades[i] >= boundValue[1]) histogram[0]++;
+          else if (grades[i] >= boundValue[2]) histogram[1]++;
+          else if (grades[i] >= boundValue[3]) histogram[2]++;
+          else if (grades[i] >= boundValue[4]) histogram[3]++;
+          else if (grades[i] >= boundValue[5]) histogram[4]++;
+          else if (grades[i] >= boundValue[6]) histogram[5]++;
+          else if (grades[i] >= boundValue[7]) histogram[6]++;
+          else if (grades[i] >= boundValue[8]) histogram[7]++;
+          else if (grades[i] >= boundValue[9]) histogram[8]++;
+          else if (grades[i] >= boundValue[10]) histogram[9]++;
+          else histogram[10]++;
         }
+      }
     }
     return histogram;
-}
+  }
 
-function drawHistogram(obj, length, scale) {
+  function drawHistogram(obj, length, scale) {
     var width = (length/grades.length)*100;
     obj.style.width = width*scale + '%';
     obj.textContent = "("+length+")";
     if (length != 0) {
-        obj.style.visibility = 'visible';
+      obj.style.visibility = 'visible';
     }
     else {
-        obj.style.visibility = 'hidden';
+      obj.style.visibility = 'hidden';
     }
-}
+  }
 
-function update() {
+  function update() {
     var histogram = recalculateHistogram();
     max = Math.max.apply(null, histogram);
     if (max != 0)
-        scale = grades.length / max;
+    scale = grades.length / max;
     else
-        scale = 0;
+    scale = 0;
     drawHistogram(document.getElementById('A+'), histogram[0], scale);
     drawHistogram(document.getElementById('A'), histogram[1], scale);
     drawHistogram(document.getElementById('A-'), histogram[2], scale);
@@ -132,32 +132,37 @@ function update() {
     drawHistogram(document.getElementById('C-'), histogram[8], scale);
     drawHistogram(document.getElementById('D'), histogram[9], scale);
     drawHistogram(document.getElementById('F'), histogram[10], scale);
-}
+  }
 
-function assign_grade() {
+  function assign_grade() {
     var currentBound = getCurrentBound();
     var boundValue = getBoundValue(currentBound);
     for (var i = 0; i < enrolls.length; i++) {
-        if (enrolls[i].percentage >= boundValue[1]) enrolls[i].lettergrade = 'A+';
-        else if (enrolls[i].percentage >= boundValue[2]) enrolls[i].lettergrade = 'A';
-        else if (enrolls[i].percentage >= boundValue[3]) enrolls[i].lettergrade = 'A-';
-        else if (enrolls[i].percentage >= boundValue[4]) enrolls[i].lettergrade = 'B+';
-        else if (enrolls[i].percentage >= boundValue[5]) enrolls[i].lettergrade = 'B';
-        else if (enrolls[i].percentage >= boundValue[6]) enrolls[i].lettergrade = 'B-';
-        else if (enrolls[i].percentage >= boundValue[7]) enrolls[i].lettergrade = 'C+';
-        else if (enrolls[i].percentage >= boundValue[8]) enrolls[i].lettergrade = 'C';
-        else if (enrolls[i].percentage >= boundValue[9]) enrolls[i].lettergrade = 'C-';
-        else if (enrolls[i].percentage >= boundValue[10]) enrolls[i].lettergrade = 'D';
-        else enrolls[i].lettergrade = 'F';
+      if (enrolls[i].percentage >= boundValue[1]) enrolls[i].lettergrade = 'A+';
+      else if (enrolls[i].percentage >= boundValue[2]) enrolls[i].lettergrade = 'A';
+      else if (enrolls[i].percentage >= boundValue[3]) enrolls[i].lettergrade = 'A-';
+      else if (enrolls[i].percentage >= boundValue[4]) enrolls[i].lettergrade = 'B+';
+      else if (enrolls[i].percentage >= boundValue[5]) enrolls[i].lettergrade = 'B';
+      else if (enrolls[i].percentage >= boundValue[6]) enrolls[i].lettergrade = 'B-';
+      else if (enrolls[i].percentage >= boundValue[7]) enrolls[i].lettergrade = 'C+';
+      else if (enrolls[i].percentage >= boundValue[8]) enrolls[i].lettergrade = 'C';
+      else if (enrolls[i].percentage >= boundValue[9]) enrolls[i].lettergrade = 'C-';
+      else if (enrolls[i].percentage >= boundValue[10]) enrolls[i].lettergrade = 'D';
+      else enrolls[i].lettergrade = 'F';
     }
 
     $.ajax({
-        type: "POST",
-        url: "/courses/calculate",    // be sure to set this in your routes.rb
-        data:  { data_value: JSON.stringify(enrolls) },
-        success: function(data) {
-            console.log("success. data:");
-            console.log(data);
-        }
+      type: "POST",
+      url: "/courses/calculate",    // be sure to set this in your routes.rb
+      data:  { data_value: JSON.stringify(enrolls) },
+      success: function(data) {
+        console.log("success. data:");
+        console.log(data);
+      }
     });
-}
+  }
+
+  var ready;
+  ready = update();
+  $(document).ready(ready);
+  $(document).on('page:load', ready);

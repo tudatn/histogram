@@ -1,7 +1,7 @@
 class CreateCourses < ActiveRecord::Migration
   def up
     create_table :courses, id: false do |t|
-      t.integer :course_id, primary_key: true
+      t.string :course_id, primary_key: true
       t.string :description
       t.timestamps null: false
     end
