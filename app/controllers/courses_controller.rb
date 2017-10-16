@@ -68,8 +68,12 @@ class CoursesController < ApplicationController
         @enroll = Enroll.find(e['id'])
         @enroll.update(:lettergrade => e['lettergrade'])
     end
-    @a = @enrolls[0]
+    if @enrolls.any?
+      @a = @enrolls[0]
       redirect_to(course_path(:id => @a['course_id']))
+    else
+      redirect_to(courses_path)
+    end
   end
 
 

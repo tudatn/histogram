@@ -137,6 +137,7 @@
   function assign_grade() {
     var currentBound = getCurrentBound();
     var boundValue = getBoundValue(currentBound);
+    
     for (var i = 0; i < enrolls.length; i++) {
       if (enrolls[i].percentage >= boundValue[1]) enrolls[i].lettergrade = 'A+';
       else if (enrolls[i].percentage >= boundValue[2]) enrolls[i].lettergrade = 'A';
