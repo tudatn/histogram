@@ -23,6 +23,7 @@ class CoursesController < ApplicationController
       flash[:notice] = "Created succesfully"
       redirect_to(courses_path)
     else
+      flash[:notice] = "Invalid input"
       render('new')
     end
   end
@@ -39,6 +40,7 @@ class CoursesController < ApplicationController
       flash[:notice] = "Updated succesfully"
       redirect_to(courses_path)
     else
+      flash[:notice] = "Invalid input"
       redirect_to('edit')
     end
   end
@@ -66,7 +68,8 @@ class CoursesController < ApplicationController
         @enroll = Enroll.find(e['id'])
         @enroll.update(:lettergrade => e['lettergrade'])
     end
-      redirect_to(courses_path)
+    @a = @enrolls[0]
+      redirect_to(course_path(:id => @a['course_id']))
   end
 
 

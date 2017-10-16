@@ -22,7 +22,7 @@ class EnrollsController < ApplicationController
       flash[:notice] = "Created succesfully"
       redirect_to(enrolls_path)
     else
-      flash[:notice] = "Something wrong"
+      flash[:notice] = "No Student ID or Course ID exist"
       render('new')
     end
   end
@@ -39,6 +39,7 @@ class EnrollsController < ApplicationController
       flash[:notice] = "Updated succesfully"
       redirect_to(enroll_path(@enroll))
     else
+      flash[:notice] = "Invalid input"
       redirect_to('edit')
     end
   end

@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
       flash[:notice] = "Created succesfully"
       redirect_to(students_path)
     else
+      flash[:notice] = "Invalid input"
       render('new')
     end
   end
@@ -38,6 +39,7 @@ class StudentsController < ApplicationController
       flash[:notice] = "Updated succesfully"
       redirect_to(student_path(@student))
     else
+      flash[:notice] = "Invalid input"
       redirect_to('edit')
     end
   end
