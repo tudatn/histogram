@@ -1,6 +1,6 @@
 class EnrollsController < ApplicationController
 
-  layout 'general'
+  layout 'others'
 
   def index
     @enrolls = Enroll.all

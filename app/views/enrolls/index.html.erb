@@ -1,3 +1,6 @@
+
+<%= stylesheet_link_tag "enrolls" %>
+
 <div class="enrolls index">
   <h2>Enrollments</h2>
 
@@ -9,6 +12,7 @@
       <th>CourseID</th>
       <th>Percentage</th>
       <th>Grade</th>
+      <th>Function</th>
     </tr>
 
     <% @enrolls.each do |enroll| %>
@@ -25,4 +29,9 @@
     </tr>
     <% end %>
   </table>
+
+  <p></p>
+  <%= link_to("All Students", students_path) %>
+  <%= link_to("All Courses", courses_path) %>
+
 </div>

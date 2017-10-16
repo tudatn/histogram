@@ -7,4 +7,11 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( histogram.js )
+
 Rails.application.config.assets.precompile += %w( histogram.css )
+
+Rails.application.config.assets.precompile += %w( enrolls.css )
+
+Rails.application.config.assets.precompile += %w( students.css )
+
+Rails.application.config.assets.precompile += %w( courses.css )

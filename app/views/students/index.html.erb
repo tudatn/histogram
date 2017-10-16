@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "students" %>
+
 <div class="students index">
   <h2>Students</h2>
 
@@ -8,6 +10,7 @@
       <th>StudentID</th>
       <th>Full Name</th>
       <th>Email</th>
+      <th>Function</th>
     </tr>
 
     <% @students.each do |student| %>
@@ -23,4 +26,9 @@
     </tr>
     <% end %>
   </table>
+
+  <p></p>
+  <%= link_to("All Courses", courses_path) %>
+  <%= link_to("All Enrollments", enrolls_path) %>
+
 </div>

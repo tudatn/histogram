@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    # session[:passed_variable] = @course
+    session[:passed_variable] = @course
   end
 
   def new
@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
     # Update data
     if @course.update_attributes(course_params)
       flash[:notice] = "Updated succesfully"
-      redirect_to(course_path(@course))
+      redirect_to(courses_path)
     else
       redirect_to('edit')
     end

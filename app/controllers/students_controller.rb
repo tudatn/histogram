@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  layout 'general'
+  layout 'others'
 
   def index
     @students = Student.all

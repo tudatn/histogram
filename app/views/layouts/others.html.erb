@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="app/assets/stylesheets/students.css" type="text/css">
+
+    <%= include_gon(:init => true)%>
+    <%= javascript_include_tag('application') %>
+  </head>
+  <body>
+    <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
